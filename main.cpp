@@ -1,10 +1,8 @@
 #include <iostream>
 #include <chrono>
 #include <thread>
+#include "coolheader.h"
 using namespace std;
-
-string changeRedLightToGreen(string s);
-string changeGreenLightToRed(string s);
 
 bool red_light = false;
 bool yellow_light = false;
@@ -32,7 +30,7 @@ string changeRedLightToGreen(string current_status){
 
         red_light = true;
         yellow_light = true;
-        cout << "Red, Yellow-mode activated! \n";
+        cout << "Red-Yellow-mode activated! \n";
         cout << "Red and yellow.. \n";
         this_thread::sleep_for(3000ms);
         red_light = false;
