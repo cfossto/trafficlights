@@ -23,7 +23,7 @@ int main() {
 
 
 // Changing redlight to Green-mode if current status is Red.
-// String lights are placeholders for GPIO-pins.
+// Boolean lights are placeholders for GPIO-pins.
 string changeRedLightToGreen(string current_status){
 
     string status = current_status;
@@ -54,7 +54,7 @@ string changeRedLightToGreen(string current_status){
 }
 
 // Changing redlight to Red-mode if current status is Green.
-// String lights are placeholders for GPIO-pins.
+// Boolean lights are placeholders for GPIO-pins.
 string changeGreenLightToRed(string current_status){
 
     string status = current_status;
