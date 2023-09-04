@@ -22,7 +22,8 @@ int main() {
 }
 
 
-
+// Changing redlight to Green-mode if current status is Red.
+// String lights are placeholders for GPIO-pins.
 string changeRedLightToGreen(string current_status){
 
     string status = current_status;
@@ -32,6 +33,7 @@ string changeRedLightToGreen(string current_status){
         red_light = true;
         yellow_light = true;
         cout << "Red, Yellow-mode activated! \n";
+        cout << "Red and yellow.. \n";
         this_thread::sleep_for(3000ms);
         red_light = false;
         yellow_light = false;
@@ -51,6 +53,8 @@ string changeRedLightToGreen(string current_status){
     return current_status;
 }
 
+// Changing redlight to Red-mode if current status is Green.
+// String lights are placeholders for GPIO-pins.
 string changeGreenLightToRed(string current_status){
 
     string status = current_status;
