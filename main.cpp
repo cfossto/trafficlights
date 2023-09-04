@@ -3,9 +3,25 @@
 #include <thread>
 using namespace std;
 
+string changeRedLightToGreen(string s);
+string changeGreenLightToRed(string s);
+
 bool red_light = false;
 bool yellow_light = false;
 bool green_light = false;
+
+int main() {
+
+    string current_status = "Red";
+
+    string status = changeRedLightToGreen(current_status);
+
+    string status2 = changeGreenLightToRed(status);
+
+    return 0;
+}
+
+
 
 string changeRedLightToGreen(string current_status){
 
@@ -16,6 +32,7 @@ string changeRedLightToGreen(string current_status){
         red_light = true;
         yellow_light = true;
         cout << "Red, Yellow-mode activated! \n";
+        this_thread::sleep_for(3000ms);
         red_light = false;
         yellow_light = false;
         green_light = true;
@@ -34,19 +51,22 @@ string changeRedLightToGreen(string current_status){
     return current_status;
 }
 
-/*
-void changeGreenLightToRed(){
+string changeGreenLightToRed(string current_status){
 
+    string status = current_status;
 
-}
-*/
+    if (current_status == "Green"){
 
-int main() {
+        green_light = false;
+        yellow_light = true;
+        cout << "Turning on red-mode! \n";
+        this_thread::sleep_for(3000ms);
+        yellow_light = false;
+        red_light = true;
+        status = "Red";
+        cout << "Red! \n";
+    }
 
-    string current_status = "Red";
-
-    string status = changeRedLightToGreen(current_status);
-    cout << status;
-
-    return 0;
+    cout << "Red light on? " << (red_light ? "True":"False") << endl;
+    return status;
 }
