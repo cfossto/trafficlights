@@ -4,5 +4,6 @@ project(trafficlights)
 set(CMAKE_CXX_STANDARD 17)
 
 add_executable(trafficlights main.cpp
-        coolheader.h
+        src/TrafficLight.cpp
+        src/TrafficLight.h
 )
